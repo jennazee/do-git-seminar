@@ -1,0 +1,12 @@
+clean_checkout() {
+    git fetch origin;
+    git checkout origin/master;
+    git checkout -b $1;
+}
+alias checkout="clean_checkout"
+
+alias rebase='git fetch origin; git rebase -i origin/master'
+
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
